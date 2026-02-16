@@ -27,6 +27,12 @@ h1 {
   align-items: center;
   padding: 14px 0;
   border-bottom: 1px solid #ddd;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.chart-row:hover {
+  background: #ffffff;
+  transform: translateX(4px);
 }
 
 .pos {
@@ -37,6 +43,7 @@ h1 {
   width: 50px;
   height: 50px;
   object-fit: cover;
+  border-radius: 6px;
 }
 
 .title {
@@ -50,4 +57,14 @@ h1 {
 .last {
   text-align: right;
   font-weight: 500;
+}
+
+.badge {
+  background: #111;
+  color: #fff;
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  margin-left: 8px;
+  letter-spacing: 1px;
 }
