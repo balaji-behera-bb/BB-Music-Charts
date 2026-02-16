@@ -1,52 +1,53 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6fb;
   margin: 0;
-  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #111;
 }
 
 .container {
-  max-width: 800px;
-  margin: auto;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
 h1 {
-  text-align: center;
+  font-size: 48px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
 }
 
-#chart {
-  margin-top: 20px;
+.date-picker {
+  margin-bottom: 30px;
 }
 
-.row {
-  display: flex;
+.chart-row {
+  display: grid;
+  grid-template-columns: 60px 60px 1fr 1fr 80px;
   align-items: center;
-  background: white;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ddd;
 }
 
 .pos {
-  width: 40px;
-  font-weight: bold;
+  font-size: 18px;
 }
 
-.song {
-  display: flex;
-  align-items: center;
-  flex: 1;
-}
-
-.song img {
+.cover img {
   width: 50px;
   height: 50px;
-  border-radius: 6px;
-  margin-right: 10px;
+  object-fit: cover;
 }
 
-.change {
-  width: 60px;
+.title {
+  font-weight: 600;
+}
+
+.artist {
+  color: #666;
+}
+
+.last {
   text-align: right;
-  font-size: 18px;
+  font-weight: 500;
 }
