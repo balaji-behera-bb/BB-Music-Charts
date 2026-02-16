@@ -1,4 +1,4 @@
-constconst chartData = {
+const chartData = {
   "2026-02-12": [
     { pos: 1, title: "Abracadabra", artist: "Lady Gaga", image: "https://via.placeholder.com/50", last: 1 },
     { pos: 2, title: "DTMF", artist: "Bad Bunny", image: "https://via.placeholder.com/50", last: 3 },
