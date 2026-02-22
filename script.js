@@ -1,64 +1,67 @@
 const chartData = {
-  "2026-02-12": [
-    { pos: 1, title: "Die With A Smile", artist: "Lady Gaga, Bruno Mars", last: 2 },
-    { pos: 2, title: "APT.", artist: "ROSÉ, Bruno Mars", last: 1 },
-    { pos: 3, title: "Birds of a Feather", artist: "Billie Eilish", last: 4 },
-    { pos: 4, title: "Beautiful Things", artist: "Benson Boone", last: 3 },
-    { pos: 5, title: "Gata Only", artist: "FloyyMenor, Cris MJ", last: 6 },
-    { pos: 6, title: "Greedy", artist: "Tate McRae", last: 7 },
-    { pos: 7, title: "Cruel Summer", artist: "Taylor Swift", last: 8 },
-    { pos: 8, title: "Espresso", artist: "Sabrina Carpenter", last: 9 },
-    { pos: 9, title: "Calm Down", artist: "Rema, Selena Gomez", last: 10 },
-    { pos: 10, title: "Houdini", artist: "Dua Lipa", last: 11 },
-    { pos: 11, title: "Paint The Town Red", artist: "Doja Cat", last: 12 },
-    { pos: 12, title: "Water", artist: "Tyla", last: 13 },
-    { pos: 13, title: "As It Was", artist: "Harry Styles", last: 14 },
-    { pos: 14, title: "Levitating", artist: "Dua Lipa", last: 15 },
-    { pos: 15, title: "Stay", artist: "The Kid LAROI, Justin Bieber", last: null }
-  ],
 
-  "2026-02-13": [
-    { pos: 1, title: "APT.", artist: "ROSÉ, Bruno Mars", last: 2 },
-    { pos: 2, title: "Die With A Smile", artist: "Lady Gaga, Bruno Mars", last: 1 },
-    { pos: 3, title: "Birds of a Feather", artist: "Billie Eilish", last: 3 },
-    { pos: 4, title: "Gata Only", artist: "FloyyMenor, Cris MJ", last: 5 },
-    { pos: 5, title: "Beautiful Things", artist: "Benson Boone", last: 4 },
-    { pos: 6, title: "Greedy", artist: "Tate McRae", last: 6 },
-    { pos: 7, title: "Cruel Summer", artist: "Taylor Swift", last: 7 },
-    { pos: 8, title: "Espresso", artist: "Sabrina Carpenter", last: 8 },
-    { pos: 9, title: "Calm Down", artist: "Rema, Selena Gomez", last: 9 },
-    { pos: 10, title: "Houdini", artist: "Dua Lipa", last: 10 },
-    { pos: 11, title: "Paint The Town Red", artist: "Doja Cat", last: 11 },
-    { pos: 12, title: "Water", artist: "Tyla", last: 12 },
-    { pos: 13, title: "As It Was", artist: "Harry Styles", last: 13 },
-    { pos: 14, title: "Levitating", artist: "Dua Lipa", last: 14 },
-    { pos: 15, title: "Fortnight", artist: "Taylor Swift, Post Malone", last: null }
-  ],
+  "2026-02-15": generateDay(1),
+  "2026-02-16": generateDay(2),
+  "2026-02-17": generateDay(3),
+  "2026-02-18": generateDay(4),
+  "2026-02-19": generateDay(5),
+  "2026-02-20": generateDay(6),
+  "2026-02-21": generateDay(7)
 
-  "2026-02-14": [
-    { pos: 1, title: "Die With A Smile", artist: "Lady Gaga, Bruno Mars", last: 2 },
-    { pos: 2, title: "APT.", artist: "ROSÉ, Bruno Mars", last: 1 },
-    { pos: 3, title: "Beautiful Things", artist: "Benson Boone", last: 5 },
-    { pos: 4, title: "Birds of a Feather", artist: "Billie Eilish", last: 3 },
-    { pos: 5, title: "Greedy", artist: "Tate McRae", last: 6 },
-    { pos: 6, title: "Gata Only", artist: "FloyyMenor, Cris MJ", last: 4 },
-    { pos: 7, title: "Cruel Summer", artist: "Taylor Swift", last: 7 },
-    { pos: 8, title: "Espresso", artist: "Sabrina Carpenter", last: 8 },
-    { pos: 9, title: "Calm Down", artist: "Rema, Selena Gomez", last: 9 },
-    { pos: 10, title: "Houdini", artist: "Dua Lipa", last: 10 },
-    { pos: 11, title: "Paint The Town Red", artist: "Doja Cat", last: 11 },
-    { pos: 12, title: "Water", artist: "Tyla", last: 12 },
-    { pos: 13, title: "As It Was", artist: "Harry Styles", last: 13 },
-    { pos: 14, title: "Levitating", artist: "Dua Lipa", last: 14 },
-    { pos: 15, title: "Good Luck, Babe!", artist: "Chappell Roan", last: null }
-  ]
 };
+
+function generateDay(shift) {
+  const songs = [
+    "Die With A Smile",
+    "APT.",
+    "Beautiful Things",
+    "Birds of a Feather",
+    "Greedy",
+    "Gata Only",
+    "Cruel Summer",
+    "Espresso",
+    "Calm Down",
+    "Houdini",
+    "Paint The Town Red",
+    "Water",
+    "As It Was",
+    "Levitating",
+    "Good Luck, Babe!"
+  ];
+
+  const artists = [
+    "Lady Gaga, Bruno Mars",
+    "ROSÉ, Bruno Mars",
+    "Benson Boone",
+    "Billie Eilish",
+    "Tate McRae",
+    "FloyyMenor, Cris MJ",
+    "Taylor Swift",
+    "Sabrina Carpenter",
+    "Rema, Selena Gomez",
+    "Dua Lipa",
+    "Doja Cat",
+    "Tyla",
+    "Harry Styles",
+    "Dua Lipa",
+    "Chappell Roan"
+  ];
+
+  return songs.map((title, i) => {
+    const newPos = ((i + shift) % 15);
+    return {
+      pos: newPos + 1,
+      title: songs[newPos],
+      artist: artists[newPos],
+      last: i + 1
+    };
+  }).sort((a, b) => a.pos - b.pos);
+}
 
 const chartContainer = document.getElementById("chart");
 const dateInput = document.getElementById("datePicker");
 
 function getArrow(current, last) {
-  if (!last) return "";
   const movement = last - current;
   if (movement > 0) return `↑ ${movement}`;
   if (movement < 0) return `↓ ${Math.abs(movement)}`;
@@ -92,25 +95,14 @@ async function renderChart(date) {
     const row = document.createElement("div");
     row.className = "chart-row";
 
-    const isNew = song.last === null;
-
     row.innerHTML = `
       <div class="pos">${song.pos}</div>
-
       <div class="cover">
         <img src="${image}" alt="${song.title}">
       </div>
-
-      <div class="title">
-        ${song.title}
-        ${isNew ? `<span class="badge">NEW</span>` : ""}
-      </div>
-
+      <div class="title">${song.title}</div>
       <div class="artist">${song.artist}</div>
-
-      <div class="last">
-        ${isNew ? "—" : getArrow(song.pos, song.last)}
-      </div>
+      <div class="last">${getArrow(song.pos, song.last)}</div>
     `;
 
     chartContainer.appendChild(row);
@@ -121,6 +113,5 @@ dateInput.addEventListener("change", (e) => {
   renderChart(e.target.value);
 });
 
-const today = "2026-02-14";
-dateInput.value = today;
-renderChart(today);
+dateInput.value = "2026-02-21";
+renderChart("2026-02-21");
